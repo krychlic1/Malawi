@@ -3,9 +3,9 @@ title: "Spatial Analysis of Crop Yields in Malawi"
 author: "Kathleen Rychlicki"
 date: "December 14, 2015"
 output:
-  pdf_document: default
   html_document:
     keep_md: yes
+  pdf_document: default
 ---
 
 ---
@@ -131,7 +131,7 @@ Production    | 5510
 ***
 Each crop is converted into a data frame using the FAOSTAT Package provided. Through this package, the getFAOtoSYB function is used to download multiple elements at once. After the information has been downloaded, the elements, Area Harvested, Yield and Production are plotted.
 
-```{r}
+```{r, eval=FALSE}
 #Getting FAOSTAT3 Data:
 Maize.df = getFAOtoSYB(name = c("AreaHarvested", "Yield", "Production"), domainCode = c("QC", "QC", "QC"), elementCode = c(5312,5419,5510), itemCode =c(56, 56, 56), printURL = FALSE, useCHMT = TRUE, outputFormat = "wide",countrySet = 130)
 
@@ -208,7 +208,7 @@ By using the NCDC database, the ghcnd stations are downloaded and filtered by th
 
 The data for station "MIM00067586" is retrieved as it provides the most approximate location with the country of Malawi. This is the station in Malawi called 'LILONGWE INTL'. Shown below, the coordinates of the station reside at Latitude, Longitude [-13.7839, 33.7670] respectively. According to the NOAA-NCDC, the elevation at these coordinates is 1229.00.
 
-```{r}
+```{r, eval=FALSE}
 datadir="data"
 ```
 ```{r}
@@ -216,7 +216,7 @@ d=ghcnd("MIM00067586", path = datadir)
 d$data[1:5,1:12]
 ```
 
-```{r}
+```{r, eval=FALSE}
 #Reshaping Data
 d1=ghcnd_splitvars(d)
 str(d1,list.len = 3)

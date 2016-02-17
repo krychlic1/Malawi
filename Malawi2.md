@@ -133,56 +133,10 @@ Each crop is converted into a data frame using the FAOSTAT Package provided. Thr
 ```r
 #Getting FAOSTAT3 Data:
 Maize.df = getFAOtoSYB(name = c("AreaHarvested", "Yield", "Production"), domainCode = c("QC", "QC", "QC"), elementCode = c(5312,5419,5510), itemCode =c(56, 56, 56), printURL = FALSE, useCHMT = TRUE, outputFormat = "wide",countrySet = 130)
-```
 
-```
-## 
-## 
-##                  ----------------------------------------                 
-##                  ** FAOSTAT Data Download (3 in Total) **                 
-##                  ----------------------------------------                 
-## 
-## (1): Downloading variable AreaHarvested ... OK
-## (2): Downloading variable Yield ... OK
-## (3): Downloading variable Production ... OK
-## 
-##  Number of variables successfully downloaded: 3 out of 3
-```
-
-```r
 Cassava.df = getFAOtoSYB(name = c("AreaHarvested", "Yield", "Production"), domainCode = c("QC", "QC", "QC"), elementCode = c(5312,5419,5510), itemCode =c(125, 125, 125), printURL = FALSE, useCHMT = TRUE, outputFormat = "wide",countrySet = 130)
-```
-
-```
-## 
-## 
-##                  ----------------------------------------                 
-##                  ** FAOSTAT Data Download (3 in Total) **                 
-##                  ----------------------------------------                 
-## 
-## (1): Downloading variable AreaHarvested ... OK
-## (2): Downloading variable Yield ... OK
-## (3): Downloading variable Production ... OK
-## 
-##  Number of variables successfully downloaded: 3 out of 3
-```
-
-```r
+ 
 Potatoes.df = getFAOtoSYB(name = c("AreaHarvested", "Yield", "Production"), domainCode = c("QC", "QC", "QC"), elementCode = c(5312,5419,5510), itemCode =c(116, 116, 116), printURL = FALSE, useCHMT = TRUE, outputFormat = "wide",countrySet = 130)
-```
-
-```
-## 
-## 
-##                  ----------------------------------------                 
-##                  ** FAOSTAT Data Download (3 in Total) **                 
-##                  ----------------------------------------                 
-## 
-## (1): Downloading variable AreaHarvested ... OK
-## (2): Downloading variable Yield ... OK
-## (3): Downloading variable Production ... OK
-## 
-##  Number of variables successfully downloaded: 3 out of 3
 ```
 ***
 
@@ -295,50 +249,7 @@ d$data[1:5,1:12]
 ```r
 #Reshaping Data
 d1=ghcnd_splitvars(d)
-```
-
-```
-## Warning: attributes are not identical across measure variables; they will
-## be dropped
-```
-
-```
-## Warning: attributes are not identical across measure variables; they will
-## be dropped
-```
-
-```
-## Warning: attributes are not identical across measure variables; they will
-## be dropped
-```
-
-```
-## Warning: attributes are not identical across measure variables; they will
-## be dropped
-```
-
-```r
 str(d1,list.len = 3)
-```
-
-```
-## List of 4
-##  $ tmax:Classes 'tbl_df', 'tbl' and 'data.frame':	8182 obs. of  6 variables:
-##   ..$ id   : Factor w/ 1 level "MIM00067586": 1 1 1 1 1 1 1 1 1 1 ...
-##   ..$ tmax : int [1:8182] -9999 216 -9999 -9999 257 260 -9999 287 285 -9999 ...
-##   ..$ date : Date[1:8182], format: "1982-05-01" ...
-##   .. [list output truncated]
-##  $ tmin:Classes 'tbl_df', 'tbl' and 'data.frame':	8579 obs. of  6 variables:
-##   ..$ id   : Factor w/ 1 level "MIM00067586": 1 1 1 1 1 1 1 1 1 1 ...
-##   ..$ tmin : int [1:8579] 130 -9999 -9999 -9999 130 140 -9999 155 -9999 180 ...
-##   ..$ date : Date[1:8579], format: "1982-05-01" ...
-##   .. [list output truncated]
-##  $ prcp:Classes 'tbl_df', 'tbl' and 'data.frame':	6959 obs. of  6 variables:
-##   ..$ id   : Factor w/ 1 level "MIM00067586": 1 1 1 1 1 1 1 1 1 1 ...
-##   ..$ prcp : int [1:6959] -9999 -9999 -9999 -9999 -9999 -9999 -9999 -9999 -9999 -9999 ...
-##   ..$ date : Date[1:6959], format: "1982-05-01" ...
-##   .. [list output truncated]
-##   [list output truncated]
 ```
 
 ```r
