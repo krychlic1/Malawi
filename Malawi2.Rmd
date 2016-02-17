@@ -330,7 +330,7 @@ As taken from the NASA Earth Data, the Land Cover Type product will provide data
 ```{r}
 datadir="data"
 ```
-```{r}
+```{r, eval=FALSE}
 #Testing for HDFfunctionality
 gdalinfo(formats = T) %>% grep(pattern="HDF",value=T)
 hdf=file.path(datadir,"MCD12Q1.A2004001.h21v10.051.2014287180042.hdf")
@@ -339,7 +339,7 @@ hdf=file.path(datadir,"MCD12Q1.A2004001.h21v10.051.2014287180042.hdf")
 gdalinfo(hdf,nomd=T)
 ```
 
-```{r}
+```{r, eval=FALSE}
 #Plotting raster of MCD12Q1 for Malawi tiles
 gdalwarp("HDF4_EOS:EOS_GRID:\"data/MCD12Q1.A2004001.h21v10.051.2014287180042.hdf\":MCD12Q1:Land_Cover_Type_1",
                "test.tif",t_srs='+proj=longlat +datum=WGS84',
@@ -442,7 +442,7 @@ mal=stack(mal_files)
 plot(mal[[1:2]])
 ```{r}
 ```
-```{r}
+```{r, eval=FALSE}
 #Retrieving bands for MCD12Q1 and MOD13Q1
 GetBands(Product = "MCD12Q1")
 GetBands(Product = "MOD13Q1")

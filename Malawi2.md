@@ -407,31 +407,10 @@ datadir="data"
 ```r
 #Testing for HDFfunctionality
 gdalinfo(formats = T) %>% grep(pattern="HDF",value=T)
-```
-
-```
-## [1] "  HDF4 (ros): Hierarchical Data Format Release 4"
-## [2] "  HDF4Image (rw+): HDF4 Dataset"                 
-## [3] "  HDF5 (ros): Hierarchical Data Format Release 5"
-## [4] "  HDF5Image (ro): HDF5 Dataset"
-```
-
-```r
 hdf=file.path(datadir,"MCD12Q1.A2004001.h21v10.051.2014287180042.hdf")
 
 #Finding subdatasets: 
 gdalinfo(hdf,nomd=T)
-```
-
-```
-## Warning: running command '"C:\OSGeo4W64\bin\gdalinfo.exe" -nomd "data/
-## MCD12Q1.A2004001.h21v10.051.2014287180042.hdf"' had status 1
-```
-
-```
-## character(0)
-## attr(,"status")
-## [1] 1
 ```
 
 
@@ -440,17 +419,6 @@ gdalinfo(hdf,nomd=T)
 gdalwarp("HDF4_EOS:EOS_GRID:\"data/MCD12Q1.A2004001.h21v10.051.2014287180042.hdf\":MCD12Q1:Land_Cover_Type_1",
                "test.tif",t_srs='+proj=longlat +datum=WGS84',
 		                      overwrite=TRUE,method='near')
-```
-
-```
-## Warning: running command '"C:\OSGeo4W64\bin\gdalwarp.exe" -overwrite -
-## t_srs "+proj=longlat +datum=WGS84" -of "GTiff" "HDF4_EOS:EOS_GRID:"data/
-## MCD12Q1.A2004001.h21v10.051.2014287180042.hdf":MCD12Q1:Land_Cover_Type_1"
-## "test.tif"' had status 1
-```
-
-```
-## NULL
 ```
 
 ```r
@@ -582,43 +550,7 @@ plot(mal[[1:2]])
 ```r
 #Retrieving bands for MCD12Q1 and MOD13Q1
 GetBands(Product = "MCD12Q1")
-```
-
-```
-##  [1] "LC_Property_1"                      
-##  [2] "LC_Property_2"                      
-##  [3] "LC_Property_3"                      
-##  [4] "Land_Cover_Type_1"                  
-##  [5] "Land_Cover_Type_2"                  
-##  [6] "Land_Cover_Type_3"                  
-##  [7] "Land_Cover_Type_4"                  
-##  [8] "Land_Cover_Type_5"                  
-##  [9] "Land_Cover_Type_1_Assessment"       
-## [10] "Land_Cover_Type_2_Assessment"       
-## [11] "Land_Cover_Type_3_Assessment"       
-## [12] "Land_Cover_Type_4_Assessment"       
-## [13] "Land_Cover_Type_5_Assessment"       
-## [14] "Land_Cover_Type_1_Secondary"        
-## [15] "Land_Cover_Type_1_Secondary_Percent"
-```
-
-```r
 GetBands(Product = "MOD13Q1")
-```
-
-```
-##  [1] "250m_16_days_blue_reflectance"         
-##  [2] "250m_16_days_MIR_reflectance"          
-##  [3] "250m_16_days_NIR_reflectance"          
-##  [4] "250m_16_days_pixel_reliability"        
-##  [5] "250m_16_days_red_reflectance"          
-##  [6] "250m_16_days_relative_azimuth_angle"   
-##  [7] "250m_16_days_sun_zenith_angle"         
-##  [8] "250m_16_days_view_zenith_angle"        
-##  [9] "250m_16_days_VI_Quality"               
-## [10] "250m_16_days_NDVI"                     
-## [11] "250m_16_days_EVI"                      
-## [12] "250m_16_days_composite_day_of_the_year"
 ```
 
 ####**Results**
